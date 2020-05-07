@@ -17,5 +17,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    std::vector<int> generateInputVector(int max, bool omezeni);
+
+private slots:
+    void prefixSoucet();
+    void prefixSoucetViceVlaken();
 };
 #endif // MAINWINDOW_H

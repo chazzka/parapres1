@@ -25,6 +25,10 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+# toto je podle stackoverflow, treba je to totalni sranec a nepujde to
+QMAKE_CXXFLAGS += -fopenmp
+LIBS += -fopenmp
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
