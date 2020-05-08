@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include <iostream>
 #include <vector>
-#include <omp.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -54,6 +53,10 @@ void MainWindow::prefixSoucetViceVlaken()
     std::vector<int> numbers = generateInputVector(size, false);
     if(numbers.size() == 0) {
         ui->label2->setText("Tak takhle teda ne.");
+        return;
+    }
+    if(threads > 32) {
+        ui->label2->setText("Dosazen limit threadu (max 32).");
         return;
     }
     int result = 0;
